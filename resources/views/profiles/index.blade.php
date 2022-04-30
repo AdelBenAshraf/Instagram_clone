@@ -9,7 +9,7 @@
         <div class="col-9 pt-5">
             <div class="d-flex" style="align-items: center;">
                 <div class="h4">{{ $user->username }}</div>
-                <follow-button></follow-button>
+                <follow-button user-id="{{$user->id}}" follows="{{$follows}}"></follow-button>
                 
             </div>
 
@@ -24,9 +24,9 @@
                 @endcan
 
             <div class="d-flex p-1">
-                <div style="padding-right: 5px;"><strong>{{$user->posts->count()}} </strong>posts</div>
-                <div style="padding-right: 5px;"><strong>151 </strong>followers</div>
-                <div style="padding-right: 5px;"><strong>8 </strong>following</div>
+                <div style="padding-right: 5px;"><strong>{{$postCount}} </strong>posts</div>
+                <div style="padding-right: 5px;"><strong> {{$followersCount}}</strong>followers</div>
+                <div style="padding-right: 5px;"><strong>{{$followingCount}} </strong>following</div>
             </div>
             <div style="padding-top:4px; font-weight:bold;">{{$user->profile->title}}</div>
             <div> {{$user->profile->description}}</div>
